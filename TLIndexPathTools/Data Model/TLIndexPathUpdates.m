@@ -222,13 +222,13 @@
 //    // TODO Disable reordering sections because it may cause duplicate animations
 //    // when a item is inserted, deleted, or moved in that section. Need to figure
 //    // out how to avoid the duplicate animation.
-//    if (self.movedSectionNames.count) {
-//        for (NSString *sectionName in self.movedSectionNames) {
-//            NSInteger oldSection = [self.oldDataModel sectionForSectionName:sectionName];
-//            NSInteger updatedSection = [self.updatedDataModel sectionForSectionName:sectionName];
-//            [tableView moveSection:oldSection toSection:updatedSection];
-//        }
-//    }
+    if (self.movedSectionNames.count) {
+        for (NSString *sectionName in self.movedSectionNames) {
+            NSInteger oldSection = [self.oldDataModel sectionForSectionName:sectionName];
+            NSInteger updatedSection = [self.updatedDataModel sectionForSectionName:sectionName];
+            [tableView moveSection:oldSection toSection:updatedSection];
+        }
+    }
     
     if (self.insertedItems.count) {
         NSMutableArray *indexPaths = [[NSMutableArray alloc] init];
